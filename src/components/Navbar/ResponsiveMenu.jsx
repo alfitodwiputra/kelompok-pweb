@@ -1,7 +1,7 @@
-import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { NavbarLinks } from "./Navbar";
+import PropTypes from 'prop-types';
 
 const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
   console.log("showMenu", showMenu);
@@ -21,8 +21,8 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
         </div>
         <nav className="mt-12">
           <ul className="space-y-4 text-xl">
-            {NavbarLinks.map((data) => (
-              <li>
+            {NavbarLinks.map((data, index) => (
+              <li key={index}>
                 <Link
                   to={data.link}
                   onClick={() => setShowMenu(false)}
@@ -37,11 +37,15 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
       </div>
       <div className="footer">
         <h1>
-          Made with ❤ by <a href="https://dilshad-ahmed.github.io/">Dilshad</a>{" "}
         </h1>
       </div>
     </div>
   );
+};
+
+ResponsiveMenu.propTypes = {
+  showMenu: PropTypes.bool.isRequired,
+  setShowMenu: PropTypes.func.isRequired,
 };
 
 export default ResponsiveMenu;

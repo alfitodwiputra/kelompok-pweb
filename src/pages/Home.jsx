@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Hero from "../components/Hero/Hero";
-import NatureVid from "../assets/video/video-3.mp4";
+import NatureVid from "../assets/video/footer.mp4";
 import BlogsComp from "../components/Blogs/BlogsComp";
 import Places from "../components/Places/Places";
 import Testimonial from "../components/Testimonial/Testimonial";
